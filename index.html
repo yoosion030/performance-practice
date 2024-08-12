@@ -81,24 +81,21 @@
     </header>
 
     <section class="hero">
-      <img
-        class="desktop"
-        src="images/Hero_Desktop.webp"
-        width="2160px"
-        height="1005px"
-      />
-      <img
-        class="mobile"
-        src="images/Hero_Mobile.webp"
-        width="864px"
-        height="864px"
-      />
-      <img
-        class="tablet"
-        src="images/Hero_Tablet.webp"
-        width="1440px"
-        height="1155px"
-      />
+      <picture>
+        <source
+          width="576"
+          height="576"
+          media="(max-width: 575px)"
+          srcset="images/Hero_Mobile.webp"
+        />
+        <source
+          width="960"
+          height="770"
+          media="(min-width: 576px) and (max-width: 960px)"
+          srcset="images/Hero_Tablet.webp"
+        />
+        <img width="1920px" height="893px" src="images/Hero_Desktop.webp" />
+      </picture>
 
       <div class="hero-content">
         <div class="container">
