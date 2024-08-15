@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td style="font-size: 20px">AS-IS</td> 
-        <td style="font-size: 20px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 20px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
@@ -52,7 +52,7 @@
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
@@ -117,7 +117,7 @@
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
@@ -159,7 +159,7 @@ HTML 콘텐츠에 영향을 주지 않는 script라면 상황에 따라 적절�
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
@@ -206,14 +206,14 @@ window.onload = () => {
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
-            <video src="./report/LAZY_LOAD_AS_IS.mov">
+            <img src="./report/LAZY_LOAD_AS_IS.gif">
         </td>
         <td>
-            <video src="./report/LAZY_LOAD_TO_BE.mov">
+            <img src="./report/LAZY_LOAD_TO_BE.gif">
         </td>
     </tr>
     <tr>
@@ -244,12 +244,12 @@ window.onload = () => {
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
             <h5>h5</h5>
-            <h4>h5</h4>
+            <h4>h4</h4>
             <h3>h3</h3>
         </td>
         <td>
@@ -270,10 +270,12 @@ window.onload = () => {
 
 > alt 속성은 사용자가 느린 네트워크 환경이나 src 속성값의 오류, 시각 장애인용 스크린 리더의 사용 등 어떤 이유로든 사용자가 이미지를 볼 수 없을 때 이미지 대신 제공할 대체 정보를 제공합니다. 이미지 정보를 제공하는 역할로 alt 속성은 접근성과 검색엔진을 위해 지정해야 합니다. ([참고자료](https://accessibility.naver.com/acc/guide_01))
 
+개선 방식: img 태그를 사용할 때 alt 속성을 필수적으로 선언
+
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>접근성 점수: 82점</td>
@@ -304,7 +306,7 @@ window.onload = () => {
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>검색엔진 최적화 점수: 92점</td>
@@ -323,7 +325,7 @@ window.onload = () => {
 <table>
     <tr>
         <td style="font-size: 16px">AS-IS</td> 
-        <td style="font-size: 16px; font-weight: bold;">TO-BE</td>
+        <td style="font-size: 16px; "><strong>TO-BE</strong></td>
     </tr>
     <tr>
         <td>
