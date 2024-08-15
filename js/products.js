@@ -6,13 +6,20 @@ async function loadProducts() {
 
 function displayProducts(products) {
   const container = document.querySelector("#all-products .container");
+  const fragment = document.createDocumentFragment();
 
   products.forEach((product) => {
     const productElement = document.createElement("div");
     productElement.className = "product";
     productElement.innerHTML = `
-      <div class="product-picture">
-        <img src="${product.image}" alt="product: ${product.title}" width="250">
+      <div class="product-picture skeleton">
+        <img  
+             data-src="${product.image}" 
+             alt="product: ${product.title}" 
+             width="250" 
+             height="250"
+             loading="lazy"
+             >
       </div>
       <div class="product-info">
         <p class="categories">${product.category}</p>
@@ -21,14 +28,40 @@ function displayProducts(products) {
         <button>Add to bag</button>
       </div>
     `;
+
+    fragment.appendChild(productElement);
   });
 
   container.appendChild(fragment);
+
+  const lazyImages = document.querySelectorAll("img[data-src]");
+  const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.removeAttribute("data-src");
+        lazyImage.onload = () => {
+          lazyImage.parentNode.classList.remove("skeleton");
+        };
+        observer.unobserve(lazyImage);
+      }
+    });
+  });
+
+  lazyImages.forEach((image) => lazyImageObserver.observe(image));
 }
 
-loadProducts();
+const element = document.querySelector("#all-products .container");
+const io = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    loadProducts();
+    io.unobserve(element);
+  }
+});
 
-// Simulate heavy operation. It could be a complex price calculation.
+io.observe(element);
+
 for (let i = 0; i < 10000000; i++) {
   const temp = Math.sqrt(i) * Math.sqrt(i);
 }
