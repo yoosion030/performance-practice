@@ -52,16 +52,35 @@ function displayProducts(products) {
   lazyImages.forEach((image) => lazyImageObserver.observe(image));
 }
 
-const element = document.querySelector("#all-products .container");
-const io = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    loadProducts();
-    io.unobserve(element);
+window.onload = () => {
+  let productSection = document.querySelector("#all-products .container");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        loadProducts();
+        performHeavyCalculation();
+        observer.unobserve(productSection);
+      }
+    },
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    }
+  );
+
+  observer.observe(productSection);
+
+  function performHeavyCalculation() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        let result = 0;
+        for (let i = 0; i < 10000000; i++) {
+          result += Math.sqrt(i) * Math.sqrt(i);
+        }
+        resolve(result);
+      }, 0);
+    });
   }
-});
-
-io.observe(element);
-
-for (let i = 0; i < 10000000; i++) {
-  const temp = Math.sqrt(i) * Math.sqrt(i);
-}
+};
